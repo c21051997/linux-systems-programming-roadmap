@@ -28,7 +28,7 @@ void* regular_increment(void* arg) {
 }
 
 void* atomic_increment(void* arg) {
-    int increment = *(void*) arg;
+    int increment = *(int*) arg;
 
     for (int i = 0; i < increment; ++i) {
         atomic_counter.fetch_add(1);
